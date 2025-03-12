@@ -28,7 +28,7 @@ class CharacterManager:
         self.character.max_mp = int(mp_span.text.split('/')[1])
         self.character.is_exists_trauma = True if trauma != 'Нет' else False
 
-        print(self)
+        print(self.character)
 
     def find_battle(self):
         if self.driver_gw.check_url_path('/wap/boj.php'):
