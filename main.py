@@ -13,8 +13,8 @@ def main():
     driver_gw.start()
     manager = CharacterManager(login(driver_gw), driver_gw)
 
-    try:
-        while True:
+    while True:
+        try:
             manager.find_battle()
             manager.check_main_page()
             manager.check_game_page()
@@ -22,8 +22,9 @@ def main():
 
             driver_gw.refresh()
             time.sleep(MIDDLE_RANDOM)
-    except Exception:
-        pass
+
+        except Exception:
+            pass
 
 
 if __name__ == '__main__':

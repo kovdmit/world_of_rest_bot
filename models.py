@@ -14,4 +14,4 @@ class Character:
         return f'<Character {self._username}> (HP: {self.hp}/{self.max_hp}, MP: {self.mp}/{self.max_mp}) {"+" if self.is_exists_trauma else ""}'
 
     def is_healthy(self):
-        return not self.is_exists_trauma and (self.hp / self.max_mp) > 0.9
+        return not self.is_exists_trauma and (self.hp / self.max_hp) > 0.9

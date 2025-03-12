@@ -60,15 +60,17 @@ class CharacterManager:
         if self.driver_gw.check_url_path('/wap/game.php'):
             self.update_character_info()
 
-            if not self.character.is_healthy():
+            while not self.character.is_healthy():
                 if self.character.is_exists_trauma:
                     self.driver_gw.link_click_by_href('main.php')
                     self.driver_gw.link_click_by_href('gorod.php')
                     self.driver_gw.link_click_by_href('arena.php')
                     self.driver_gw.link_click_by_href('arena_travma.php')
                     self.driver_gw.link_click_by_href('main.php')
+                    self.driver_gw.link_click_by_href('game.php')
 
-                time.sleep(BIG_RANDOM)
+                time.sleep(MIDDLE_RANDOM)
+                self.update_character_info()
             else:
                 self.driver_gw.link_click_by_href('main.php')
 
