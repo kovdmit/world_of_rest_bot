@@ -67,8 +67,8 @@ class CharacterManager:
                     self.driver_gw.link_click_by_href('arena.php')
                     self.driver_gw.link_click_by_href('arena_travma.php')
                     self.driver_gw.link_click_by_href('main.php')
-                else:
-                    time.sleep(BIG_RANDOM)
+
+                time.sleep(BIG_RANDOM)
             else:
                 self.driver_gw.link_click_by_href('main.php')
 
