@@ -1,15 +1,14 @@
 import time
 
-from selenium import webdriver
-
 from auth import login
 from constants import MIDDLE_RANDOM
+from drivers import get_chrome_driver
 from gateways import DriverGateway
 from managers import CharacterManager
 
 
 def main():
-    driver_gw = DriverGateway(webdriver.Chrome())
+    driver_gw = DriverGateway(get_chrome_driver())
     driver_gw.start()
     manager = CharacterManager(login(driver_gw), driver_gw)
 

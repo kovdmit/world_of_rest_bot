@@ -10,6 +10,9 @@ class DriverGateway:
     def __init__(self, driver):
         self.driver = driver
 
+    def save_screenshot(self, name: str):
+        return self.driver.save_screenshot(name)
+
     def find_element(self, *args):
         return self.driver.find_element(*args)
 

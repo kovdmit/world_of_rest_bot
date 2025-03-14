@@ -7,3 +7,4 @@ load_dotenv()
 
 USERNAME = os.getenv('WOR_USERNAME')
 PASSWORD = os.getenv('WOR_PASSWORD')
+DEBUG = os.getenv('WOR_DEBUG')
