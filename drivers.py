@@ -4,10 +4,13 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 
 from config import DEBUG
+from logger import log
 
 
 def get_chrome_driver():
     if not DEBUG:
+        log.info('Debug режим отключен. Браузер будет запущен в режиме headless.')
+
         options = Options()
         options.add_argument("--headless=new")
         options.add_argument("--disable-blink-features=AutomationControlled")
@@ -35,6 +38,8 @@ def get_chrome_driver():
         driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
 
     else:
+        log.info('Debug режим активирован. Браузер будет запущен обычном режиме.')
+
         driver = webdriver.Chrome()
 
     return driver

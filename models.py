@@ -1,3 +1,6 @@
+from logger import color_text, Color
+
+
 class Character:
     def __init__(self, username, password):
         self._username = username
@@ -11,7 +14,12 @@ class Character:
         self.is_exists_trauma = False
 
     def __str__(self):
-        return f'<Character {self._username}> (HP: {self.hp}/{self.max_hp}, MP: {self.mp}/{self.max_mp}) {"+" if self.is_exists_trauma else ""}'
+        hp_str = color_text(f'HP: {self.hp}/{self.max_hp}', Color.RED)
+        mp_str = color_text(f'MP: {self.mp}/{self.max_mp}', Color.BLUE)
+        trauma_str = color_text("(+)" if self.is_exists_trauma else "", Color.YELLOW)
+        message = f'<{color_text(self._username, Color.CYAN)}> ({hp_str}, {mp_str}) {trauma_str}'
+
+        return message
 
     def is_healthy(self):
         return not self.is_exists_trauma and (self.hp / self.max_hp) > 0.9
