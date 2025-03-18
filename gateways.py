@@ -3,7 +3,7 @@ from urllib.parse import urlparse
 
 from selenium.webdriver.common.by import By
 
-from constants import SMALL_RANDOM
+from constants import SMALL_RANDOM, VERY_SMALL_RANDOM
 from logger import log
 
 
@@ -24,7 +24,7 @@ class DriverGateway:
         return self.driver.execute_script(script, *args)
 
     def refresh(self):
-        log.info('Обновляю страницу.')
+        log.debug('Обновляю страницу.')
         return self.driver.refresh()
 
     def start(self):
@@ -51,7 +51,7 @@ class DriverGateway:
 
     def button_click(self, name: str):
         self.driver.find_element(By.NAME, name).click()
-        time.sleep(SMALL_RANDOM)
+        time.sleep(VERY_SMALL_RANDOM)
 
     def get_current_square_id(self):
         current_coord = self.find_element(By.XPATH, '//tbody/tr[3]/td[3]')
