@@ -29,7 +29,7 @@ class DriverGateway:
 
     def start(self):
         log.info('Открываю страницу аутентификации.')
-        self.driver.get('https://wor.com.ua/wap/')
+        self.driver.get('http://185.212.47.8/wap/')
         time.sleep(SMALL_RANDOM)
 
     def check_url_path(self, path: str):

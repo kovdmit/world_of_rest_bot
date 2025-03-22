@@ -103,7 +103,7 @@ class CharacterManager:
                     log.info('Выходим на природу.')
                     self.find_battle()
 
-                    if self.driver_gw.get_current_square_id() != 'r470':
+                    if self.driver_gw.get_current_square_id() == 'r394':
                         self.go_to_forest()
 
     def check_city_page(self):
@@ -112,7 +112,7 @@ class CharacterManager:
                 log.info('Выходим на природу.')
                 self.driver_gw.link_click_by_href('teritory.php')
 
-                if self.driver_gw.get_current_square_id() != 'r470':
+                if self.driver_gw.get_current_square_id() == 'r394':
                     self.go_to_forest()
             else:
                 self.to_game_page()
